@@ -33,12 +33,6 @@ class Teacher extends Person {
   }
 }
 
-// Test cases
-const student = new Student('Alice', 20);
-student.study(); // Output: Alice is studying
-
-const teacher = new Teacher('Mr. Smith', 35);
-teacher.teach(); // Output: Mr. Smith is teaching
 
 // Exporting the classes
 window.Person = Person;
