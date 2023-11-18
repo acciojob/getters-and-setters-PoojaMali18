@@ -1,31 +1,46 @@
-//complete this code
 class Person {
-	constructor details(name,age)
-	{
-		this.name = name;
-		this.age=age;
-	}
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  get name() {
+    return this.name;
+  }
+
+  set age(newAge) {
+    this.age = newAge;
+  }
 }
 
 class Student extends Person {
-	constructor study()
-	{
-		super(name,age);
-		console.log(name +"is studying")
-	}
-	
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  study() {
+    console.log(`${this.name} is studying`);
+  }
 }
 
 class Teacher extends Person {
-	constructor teach()
-	{
-		super(name,age);
-		console.log(name +"is taeching")
-	}
-	
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  teach() {
+    console.log(`${this.name} is teaching`);
+  }
 }
 
-// Do not change the code below this line
+// Test cases
+const student = new Student('Alice', 20);
+student.study(); // Output: Alice is studying
+
+const teacher = new Teacher('Mr. Smith', 35);
+teacher.teach(); // Output: Mr. Smith is teaching
+
+// Exporting the classes
 window.Person = Person;
 window.Student = Student;
 window.Teacher = Teacher;
