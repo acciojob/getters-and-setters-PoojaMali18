@@ -1,15 +1,19 @@
 class Person {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    this._name = name;
+    this._age = age;
   }
 
   get name() {
-    return this.name;
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
   }
 
   set age(newAge) {
-    this.age = newAge;
+    this._age = newAge;
   }
 }
 
@@ -33,6 +37,11 @@ class Teacher extends Person {
   }
 }
 
+// Test cases
+const person = new Person('John', 25);
+console.log(person.name); // Output: John
+person.name = 'Alice'; // This will work after adding the setter for name
+console.log(person.name); // Output: Alice
 
 // Exporting the classes
 window.Person = Person;
